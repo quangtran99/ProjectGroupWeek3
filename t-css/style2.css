@@ -1,0 +1,95 @@
+body {
+    font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 1200px) {
+    body .container {
+        max-width: 100%;
+    }
+}
+
+
+/* extra large devices */
+
+@media screen and (min-width: 1800px) {
+    body .container {
+        max-width: 70%;
+    }
+}
+
+.t-left {
+    max-width: 300px;
+    /* display:flex;
+    justify-content: center;
+    flex-direction: column; */
+    padding-left: 40px;
+    margin:0;
+}
+
+
+/*  SIDE BAR */
+
+#outerMenuContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: max-content;
+    margin:0;
+}
+
+#outerMenuContainer:hover {
+    color: #1DA1F2 !important;
+    background: #CFE7F6;
+    border-radius: 25px;
+    text-decoration: none;
+    opacity: 0.7;
+    
+}
+
+#outerMenuContainer:hover a {
+    color: #1DA1F2 !important;
+}
+
+#outerMenuContainer a {
+    text-decoration: none;
+    color: black;
+}
+
+.tweetbtn {
+    height: 50px;
+    width: 250px;
+    border-radius: 40px;
+    background-color: rgb(29, 161, 242);
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 0px;
+    margin-top: 10px;
+    border:none;
+}
+.tweetbtn:hover {
+    height: 50px;
+    width: 250px;
+    border-radius: 40px;
+    background-color: rgb(20, 143, 219);
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 0px;
+    margin-top: 10px;
+    border:none;
+}
+/* tien dinh dang content cua News */
+.t-title-style {
+    font-weight: bolder;
+}
+.t-title-style:hover {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.t-function-icon {
+    width:20px;
+    margin:0;
+}
