@@ -1,0 +1,117 @@
+#rightBar {
+    min-width: 380px;
+    background-color: white;
+}
+
+#rightBar .input-group-prepend {
+    background-color: white !important;
+    color: white !important;
+}
+
+#searchButton {
+    border-radius: 30px;
+    height: 10px;
+    padding: 20px;
+    position: relative;
+    width: 349px;
+    background-color: #e6ecf0;
+}
+
+
+#trendings {
+    min-width: 380px;
+}
+
+#trendings .list-group-item {
+    background-color: #f5f8fa;
+}
+
+#trendings .content {
+    cursor: pointer;
+}
+
+#trendings .trends-header {
+    font-weight: 800;
+    font-size: larger;
+}
+
+#trendings .content:hover {
+    filter: brightness(97%)
+}
+
+#trendings ul li .hashtag {
+    font-weight: 700;
+}
+
+#moreToFollowImg {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.fa-badge-check {
+    color: rgba(29, 161, 242, 1.00);
+}
+
+.followBtn {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 25px;
+    color: #1DA1F2;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: 200;
+    padding: 3px;
+    background-color: #FFFFFF;
+    border: solid #1DA1F2 1px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.followBtn:hover {
+    color: #1DA1F2;
+    background: #CFE7F6;
+    border-radius: 25px;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+#whoToFollow {
+    min-width: 380px;
+}
+
+#whoToFollow .list-group-item {
+    background-color: #f5f8fa;
+}
+
+#whoToFollow .content {
+    cursor: pointer;
+}
+
+#whoToFollow .content:hover {
+    filter: brightness(97%)
+}
+
+#whoToFollow .row .col-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#whoToFollow .row .col-6 .hashtag {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#whoToFollow .row .col-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#whoToFollow .whoToFollow-header {
+    font-weight: 800;
+    font-size: larger;
+}
