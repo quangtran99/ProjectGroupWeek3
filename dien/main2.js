@@ -119,12 +119,39 @@ function like(index){
 
 
 }
-
+function hashtag(id){
+    let d= document.getElementById(id).value;
+    let ans=[];
+    let h="";
+    for (let i=0;i<d.length;i++){
+        if (d[i]==="#"){
+            h+=d[i];
+        }else if (d[i]===" "){
+            if (h!==""){
+                ans.push(h);
+                h="";
+            }
+        }else if (h!==""){h+=d[i]}
+    }
+    console.log(ans);
+    for (i=0;i<ans.length;i++){
+        let a=ans[i];
+        let vt=d.indexOf(a);
+        console.log(vt);
+        let sub1=d.substring(0,vt);
+        let sub2=d.substring(vt+a.length+1,d.length+1);
+        console.log(sub1,"/",sub2);
+        d=sub1+`<a href="#">${ans[i]}</a> `+sub2;
+    }
+    return d;
+    console.log(d);
+}
 function dien_tweet(){
     count++;
+    
     document.getElementById("tweetArea").innerHTML=``;
    // remain=140;
-    tweet.push({content:tweetContents.value,islike:false,parent,id:count});
+    tweet.push({content:hashtag("tweetArea"),islike:false,parent,id:count});
     document.getElementById("tweetArea").value = "";
    remain=140;
     $('#indicatorContainer').data('radialIndicator').animate(100 - remain * 100 / 140)
@@ -140,8 +167,8 @@ function dien_tweet1(){
     if (remain>=0){dien_tweet();}
 }
 function dienGet(){
-    let a=document.getElementById("dien-retweetArea");
-    b=a.value;
+    let a=hashtag("dien-retweetArea");
+    b=a;
     tweet[indexReTweet].content=b;
     renderTweet(tweet);
 }
