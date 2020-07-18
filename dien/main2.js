@@ -75,3 +75,6 @@ function remove(index) {
      tweet.splice(index,1);
     renderTweet(tweet);
 }
+function dien_tweet1(){
+    if (remain>=0){dien_tweet();}
+}
