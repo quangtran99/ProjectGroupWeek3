@@ -46,16 +46,15 @@ function renderTweet(list) {
         </div>
         <div class="dien-containerImage">
         <img src="https://cdn.discordapp.com/attachments/733234774646325309/733578515944833035/comment_icon.png" class="dien-imgTweet" />
-        <div><i class="fas fa-retweet" style="cursor:pointer" onclick="retweet(${index})"></i></div>
+        <div><i class="fas fa-retweet" style="cursor:pointer" onclick="retweet(${index})"data-toggle="modal" data-target="#myModal"></i></div>
         <img src="https://cdn.discordapp.com/attachments/733234774646325309/733578519719968769/like_icon.png" class="dien-imgTweet" />
-        <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${index})"></i></div>
+        <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${index})" ></i></div>
         
         </div>
     </div>
     `).join("");
-    
+    console.log(tweet);
     document.getElementById("tweetContent").innerHTML = b;
-// console.log(tweetContents.value);
 }
 
 function dien_tweet(){
@@ -63,7 +62,6 @@ function dien_tweet(){
     document.getElementById("tweetArea").innerHTML=``;
    // remain=140;
     tweet.push({content:tweetContents.value,islike:false,parent,id:count});
-    console.log(tweet);
     document.getElementById("tweetArea").value = "";
    remain=140;
     $('#indicatorContainer').data('radialIndicator').animate(100 - remain * 100 / 140)
@@ -77,4 +75,16 @@ function remove(index) {
 }
 function dien_tweet1(){
     if (remain>=0){dien_tweet();}
+}
+function dienGet(){
+    let a=document.getElementById("dien-retweetArea");
+    b=a.value;
+    tweet[indexReTweet].content=b;
+    console.log(tweet);
+    renderTweet(tweet);
+}
+let indexReTweet;
+function retweet(index){
+    indexReTweet=index;
+
 }
