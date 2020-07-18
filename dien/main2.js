@@ -54,9 +54,10 @@ function renderTweet(list) {
         </div>
     </div>
     `).join("");
-    console.log(tweet);
     document.getElementById("tweetContent").innerHTML = b;
 }
+
+
 function like(index){
     if (tweet[index].islike===true){
         tweet[index].islike=false;
@@ -114,7 +115,7 @@ function like(index){
         }
     }
     c=b.join("");
-    document.getElementById("tweetContent").innerHTML = b;
+    document.getElementById("tweetContent").innerHTML = c;
 
 
 }
@@ -142,11 +143,11 @@ function dienGet(){
     let a=document.getElementById("dien-retweetArea");
     b=a.value;
     tweet[indexReTweet].content=b;
-    console.log(tweet);
     renderTweet(tweet);
 }
 let indexReTweet;
 function retweet(index){
     indexReTweet=index;
+    tweet[indexReTweet].islike=false;
 
 }
