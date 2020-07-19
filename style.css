@@ -163,35 +163,32 @@
 }
 
 .Q-unfollow-pop-up {
-    position: absolute;
     z-index: 2;
     left: auto;
     right: auto;
-    /* border-radius: 5px; */
-    width: 320px;
     height: auto;
-    padding: 15px 20px;
     text-align: center;
     position: relative;
     color: black;
     background-color: white;
     border: 0 solid black;
     box-sizing: border-box;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px!important;
+    border-top-left-radius: 15px!important;
+    border-top-right-radius: 15px!important;
 }
 
 .Q-unfollow-title {
     font-weight: bold;
     font-size: 20px;
     color:black;
+    padding-top: 14px !important;
 }
 
 .Q-unfollow-description {
     color: #657786;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .Q-unfollow-btn {
@@ -228,6 +225,11 @@
     align-items: center;
 }
 
+#myModal1 {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
 .Q-dropdown-left {
     left: -125px !important;
 }

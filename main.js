@@ -50,7 +50,7 @@ const render = (list) => {
         } else {
             renderString += `
         <div class="col-4" id="flwb">
-            <a href="#" class="followingBtn" id = "${index}" onclick = "unfollowBtn(${index})"><span>Following</span></a>
+        <a href="#" class="followingBtn" id = "${index}" onclick = "unfollowBtn(${index})" data-toggle="modal" data-target="#myModal1"><span>Following</span></a>
         </div>
     </div>
     </li>`
@@ -71,24 +71,35 @@ function followBtn(index) {
 
 function unfollowBtn(index) {
     let character = storage[index];
-    let html = ` <div id="dark-bg">
-    <div class="pop-up-unf">
-    <div class="Q-unfollow-pop-up">
-        <div class="Q-unfollow-title">
-            Unfollow @${character.artist_name} ?
-        </div>
-        <div class="Q-unfollow-description text-muted">
-            Their Tweets will no longer show up in your home timeline. You can still view their profile, unless their Tweets are protected.
-        </div>
-        <button class="Q-unfollow-btn-cancel" onclick="closePopUp()">
-            Cancel
-        </button>
-        <button class="Q-unfollow-btn" onclick="{followBtn(${index}); closePopUp();}">
-            Unfollow
-        </button>
-    </div>
+    let html = 
+    `              <!-- The Modal -->
+<div class="modal" id="myModal1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content Q-unfollow-pop-up">
+
+      <!-- Modal Header -->
+<div class="Q-unfollow-title modal-title">
+Unfollow @${character.artist_name} ?
 </div>
-</div>`;
+
+      <!-- Modal body -->
+<div class="Q-unfollow-description text-muted modal-body">
+Their Tweets will no longer show up in your home timeline. You can still view their profile, unless their Tweets are protected.
+</div> 
+
+      <!-- Modal footer -->
+      <div style="padding-bottom:10px">
+        <button class="Q-unfollow-btn-cancel" data-dismiss="modal" onclick="closePopUp()">
+Cancel
+</button>
+<button class="Q-unfollow-btn" data-dismiss="modal" onclick="{followBtn(${index}); closePopUp();}">
+    Unfollow
+</button>
+      </div>
+
+    </div>
+  </div>
+</div>`
     document.getElementById("popup-region").innerHTML = html;
 }
 
