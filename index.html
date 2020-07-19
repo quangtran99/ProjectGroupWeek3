@@ -26,13 +26,35 @@
     </head>
 
 <body>
+    <div class="container" >
+        <div class="row">
+            <div class="col-3">
+                <div class="t-sidebar-left" style="position: fixed;">
+                    <div class="col"><img src="t-img/twt-logo1.png" alt="twitter-logo" width="50" height="50"></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <nav class="navbar sticky-top navbar-light my-2" id="leftNav" style="  border:1px solid #e6ecf0;">
+                    <span onclick="window.location.reload();" style="cursor: pointer;">Home</span>
+
+                </nav>
+            </div>
+            <div class="col-3">
+                <nav class=" navbar sticky-top navbar-light" id="rightBar" >
+                    <span style="position: absolute;z-index: 100;"><i class="fas fa-search ml-3"></i></span>
+                    <div><input class="form-control mr-sm-2 pl-5" type="search" placeholder="Search Twitter"
+                            aria-label="Search" id="searchButton"></div>
+                </nav>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-3">
                 <div class="t-sidebar-left" style="position: fixed;">
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col"><img src="t-img/twt-logo1.png" alt="twitter-logo" width="50" height="50"></div>
-                    </div>
+                    </div> -->
                     <div class="row my-3">
                         <div id="outerMenuContainer" style="color: #16a2f2;">
                             <div class="col-2 mr-4 py-2 px-4" style="font-size: 20px;">
@@ -121,10 +143,10 @@
                 
             </div>
             <div class="col-6" >
-                <nav class="navbar sticky-top navbar-light my-2" id="leftNav" style="  border:1px solid #e6ecf0;">
+                <!-- <nav class="navbar sticky-top navbar-light my-2" id="leftNav" style="  border:1px solid #e6ecf0;">
                     <span onclick="window.location.reload();" style="cursor: pointer;">Home</span>
 
-                </nav>
+                </nav> -->
                 <div class="tweetArea" style="  border:1px solid #e6ecf0;">
                     <div class="row dien-row1">
                         <div class="col-1 "><img src="team-placeholder.png" class="dien-imgUser"
@@ -199,11 +221,11 @@
 
             <div class="col-3">
                 <footer>
-                    <nav class="navbar sticky-top navbar-light" id="rightBar">
+                    <!-- <nav class="navbar sticky-top navbar-light" id="rightBar">
                         <span style="position: absolute;z-index: 100;"><i class="fas fa-search ml-3"></i></span>
                         <div><input class="form-control mr-sm-2 pl-5" type="search" placeholder="Search Twitter"
                                 aria-label="Search" id="searchButton"></div>
-                    </nav>
+                    </nav> -->
 
                     <div id="trendings" class="py-3">
                         <ul class="list-group mb-3">
@@ -218,7 +240,7 @@
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <div class="dropdown-menu Q-dropdown-left" aria-labelledby="dropdownMenu2" >
                                         <button class="dropdown-item" type="button">🙁 This trend is spam</button>
                                         <button class="dropdown-item" type="button">🙁 This trend is abusive or
                                             harmful</button>
@@ -240,7 +262,7 @@
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <div class="dropdown-menu Q-dropdown-left" aria-labelledby="dropdownMenu2" >
                                         <button class="dropdown-item" type="button">🙁 This trend is spam</button>
                                         <button class="dropdown-item" type="button">🙁 This trend is abusive or
                                             harmful</button>
@@ -262,7 +284,7 @@
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <div class="dropdown-menu Q-dropdown-left" aria-labelledby="dropdownMenu2" >
                                         <button class="dropdown-item" type="button">🙁 This trend is spam</button>
                                         <button class="dropdown-item" type="button">🙁 This trend is abusive or
                                             harmful</button>
@@ -292,82 +314,27 @@
                                     <h5 class="whoToFollow-header">Who to follow</h5>
                                 </div>
                             </li>
-                            <li class="list-group-item content">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="https://pbs.twimg.com/profile_images/1187276116081307648/Ccxb4G6k_400x400.jpg"
-                                            id="moreToFollowImg" alt="Avatar">
-                                    </div>
-                                    <div class="col-6">
-                                        <div style="display: flex;">
-                                            <h6 class="my-0 hashtag">lalalalisa_m</h6>
-                                            <i class="ml-1 fas fa-badge-check"></i>
-                                        </div>
 
-                                        <small class="text-muted">@BLACKPINK_LISA</small>
+                            <div id="artistPlace">
 
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#" class="followBtn" id="followBtn1" onclick="followBtn()">Follow</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item content">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="https://pbs.twimg.com/profile_images/957485325793730561/FyWB3Ifi_400x400.jpg"
-                                            id="moreToFollowImg" alt="Avatar">
-                                    </div>
-                                    <div class="col-6">
-                                        <div style="display: flex;">
-                                            <h6 class="my-0 hashtag">Gordon Ramsay</h6>
-                                            <i class="fas fa-badge-check"></i>
-                                        </div>
+                            </div>
 
-                                        <small class="text-muted">@GordonRamsay</small>
 
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#" class="followBtn" id="followBtn2">Follow</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item content">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="https://pbs.twimg.com/profile_images/657199367556866048/EBEIl2ol_400x400.jpg"
-                                            id="moreToFollowImg" alt="Avatar">
-                                    </div>
-                                    <div class="col-6">
-                                        <div style="display: flex;">
-                                            <h6 class="my-0 hashtag">Adele</h6>
-                                            <i class="ml-1 fas fa-badge-check"></i>
-                                        </div>
-
-                                        <small class="text-muted">@Adele</small>
-
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#" class="followBtn" id="followBtn3">Follow</a>
-                                    </div>
-                                </div>
-                            </li>
                             <li class="list-group-item d-flex justify-content-between lh-condensed content"
                                 style="border-radius: 0px 0px 15px 15px">
                                 <div>
                                     <h6 class="my-0"><a href="#"
-                                            style="COLOR: rgba(29,161,242,1.00); text-decoration: none;">Show
-                                            more</a></h6>
+                                            style="COLOR: rgba(29,161,242,1.00); text-decoration: none;"
+                                            onclick="showMore()">Show more</a></h6>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                </footer>
             </div>
         </div>
+        </footer>
     </div>
-
-
+    <div id="popup-region"></div>
     <!-- Trending + who to flw -->
 
 

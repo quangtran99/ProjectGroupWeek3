@@ -36,7 +36,7 @@ function renderTweet(tweet) {
     let b = [];
     for (let i = 0; i < tweet.length; i++) {
         if (tweet[i].childreContent == "") {
-            b.push(` 
+            b.unshift(` 
             <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
@@ -60,7 +60,7 @@ function renderTweet(tweet) {
             </div>
             `);
         } else {
-            b.push(` 
+            b.unshift(` 
             <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
@@ -176,7 +176,7 @@ function renderTweet(tweet) {
         </div>
 
 
-        <hr />
+
         <div class="row mx-auto t-row-style">
             <div class="col-1  ">
                 <img src="/t-img/abc news icon.png" alt="avatar" style="width:45px;">
@@ -250,7 +250,7 @@ function renderTweet(tweet) {
 
         </div>
     </div>
-    <hr />
+
     <div class="row mx-auto t-row-style" style="  border:1px solid #e6ecf0;">
 
         <div class="col-1">
@@ -329,7 +329,7 @@ function like(index) {
     for (let i = 0; i < tweet.length; i++) {
         if (tweet[i].islike == false) {
             if (tweet[i].childreContent == "") {
-                b.push(` 
+                b.unshift(` 
             <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
@@ -354,7 +354,7 @@ function like(index) {
             `);
             }
             else {
-                b.push(` 
+                b.unshift(` 
             <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
@@ -401,7 +401,7 @@ function like(index) {
             }
         } else {
             if (tweet[i].childreContent == "") {
-                b.push(` 
+                b.unshift(` 
             <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
@@ -425,7 +425,7 @@ function like(index) {
             </div>
             `);
             } else {
-                b.push(` 
+                b.unshift(` 
             <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
