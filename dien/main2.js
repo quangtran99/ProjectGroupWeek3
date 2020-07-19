@@ -30,32 +30,71 @@ $('#indicatorContainer').radialIndicator({
     percentage: true,
     displayNumber: false
 });
-function renderTweet(list) {
-    let b = list.map((item, index) => ` 
-    <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
-        <div class="col-1 ">
-            <img src="team-placeholder.png" class="dien-imgUser"
-            style="width:40px;height:40px;">
-        </div>
-        <div class="col-11">
-            <div style="width:100%;height:100%;">
-                <span><b>Dien</b></span>
-                <span style="color: #e6ecf0">@Dien a few seconds ago</span>
-                <div class="dien-ContentTweet">${item.content}</div>  
+function renderTweet(tweet) {
+    let b = [];
+    for (let i = 0; i < tweet.length; i++) {
+        if (tweet[i].childreContent == "") {
+            b.push(` 
+            <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
+                <div class="col-1 ">
+                    <img src="team-placeholder.png" class="dien-imgUser"
+                    style="width:40px;height:40px;">
+                </div>
+                <div class="col-11">
+                    <div style="width:100%;height:100%;">
+                        <span><b>Dien</b></span>
+                        <span style="color: #e6ecf0">@Dien a few seconds ago</span>
+                        <div class="dien-ContentTweet">${tweet[i].content}</div>  
+                    </div>
+                </div>
+                <div class="dien-containerImage">
+                <img src="https://cdn.discordapp.com/attachments/733234774646325309/733578515944833035/comment_icon.png" class="dien-imgTweet" />
+                <div><i class="fas fa-retweet" style="cursor:pointer" onclick="retweet(${i})"data-toggle="modal" data-target="#myModal"></i></div>
+                <div onclick="like(${i})"><i class="far fa-heart"></i>
+                </div>
+                <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${i})" ></i></div>
+                
+                </div>
             </div>
-        </div>
-        <div class="dien-containerImage">
-        <img src="https://cdn.discordapp.com/attachments/733234774646325309/733578515944833035/comment_icon.png" class="dien-imgTweet" />
-        <div><i class="fas fa-retweet" style="cursor:pointer" onclick="retweet(${index})"data-toggle="modal" data-target="#myModal"></i></div>
-        <div onclick="like(${index})"><i class="far fa-heart"></i>
-        </div>
-        <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${index})" ></i></div>
-        
-        </div>
+            `);
+        } else {
+            b.push(` 
+            <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
+                <div class="col-1 ">
+                    <img src="team-placeholder.png" class="dien-imgUser"
+                    style="width:40px;height:40px;">
+                </div>
+                <div class="col-11">
+                    <div style="width:100%;height:100%;">
+                        <span><b>Dien</b></span>
+                        <span style="color: #e6ecf0">@Dien a few seconds ago</span>
+                        <div class="dien-ContentTweet">${tweet[i].content}</div>  
+                    </div>
+                </div>
+                <div class="dien-containerImage">
+                <img src="https://cdn.discordapp.com/attachments/733234774646325309/733578515944833035/comment_icon.png" class="dien-imgTweet" />
+                <div><i class="fas fa-retweet" style="cursor:pointer" onclick="retweet(${i})"data-toggle="modal" data-target="#myModal"></i></div>
+                <div onclick="like(${i})"><i class="fas fa-heart"></i>
+                </div>
+                <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${i})" ></i></div>
+                
+                </div>
+                <div class="row">
+    
+    <div class="col-12" style="border:1px solid #e6ecf0;height:100px;width:400px;text-align:center;margin-left:100px;border-radius:40px; word-wrap: break-word;">
+        ${tweet[i].childreContent}
     </div>
-    `).join("");
-    document.getElementById("tweetContent").innerHTML = b;
-}
+</div> 
+            </div>
+            
+                    
+                  
+            `);
+        }
+    }
+    c = b.join("");
+    document.getElementById("tweetContent").innerHTML = c;
+    }
 
 
 function like(index) {
@@ -144,7 +183,7 @@ function hashtag(id) {
         d = sub1 + `<a href="#">${ans[i]}</a> ` + sub2;
     }
     return d;
-    console.log(d);
+    
 }
 function dien_tweet() {
     count++;
@@ -155,69 +194,7 @@ function dien_tweet() {
     document.getElementById("tweetArea").value = "";
     remain = 140;
     $('#indicatorContainer').data('radialIndicator').animate(100 - remain * 100 / 140)
-    let b = [];
-    for (let i = 0; i < tweet.length; i++) {
-        if (tweet[i].childreContent == "") {
-            b.push(` 
-            <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
-                <div class="col-1 ">
-                    <img src="team-placeholder.png" class="dien-imgUser"
-                    style="width:40px;height:40px;">
-                </div>
-                <div class="col-11">
-                    <div style="width:100%;height:100%;">
-                        <span><b>Dien</b></span>
-                        <span style="color: #e6ecf0">@Dien a few seconds ago</span>
-                        <div class="dien-ContentTweet">${tweet[i].content}</div>  
-                    </div>
-                </div>
-                <div class="dien-containerImage">
-                <img src="https://cdn.discordapp.com/attachments/733234774646325309/733578515944833035/comment_icon.png" class="dien-imgTweet" />
-                <div><i class="fas fa-retweet" style="cursor:pointer" onclick="retweet(${i})"data-toggle="modal" data-target="#myModal"></i></div>
-                <div onclick="like(${i})"><i class="far fa-heart"></i>
-                </div>
-                <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${i})" ></i></div>
-                
-                </div>
-            </div>
-            `);
-        } else {
-            b.push(` 
-            <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
-                <div class="col-1 ">
-                    <img src="team-placeholder.png" class="dien-imgUser"
-                    style="width:40px;height:40px;">
-                </div>
-                <div class="col-11">
-                    <div style="width:100%;height:100%;">
-                        <span><b>Dien</b></span>
-                        <span style="color: #e6ecf0">@Dien a few seconds ago</span>
-                        <div class="dien-ContentTweet">${tweet[i].content}</div>  
-                    </div>
-                </div>
-                <div class="dien-containerImage">
-                <img src="https://cdn.discordapp.com/attachments/733234774646325309/733578515944833035/comment_icon.png" class="dien-imgTweet" />
-                <div><i class="fas fa-retweet" style="cursor:pointer" onclick="retweet(${i})"data-toggle="modal" data-target="#myModal"></i></div>
-                <div onclick="like(${i})"><i class="fas fa-heart"></i>
-                </div>
-                <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${i})" ></i></div>
-                
-                </div>
-                <div class="row">
-    
-    <div class="col-12" style="border:1px solid #e6ecf0;height:100px;width:400px;text-align:center;margin-left:100px;border-radius:40px; word-wrap: break-word;">
-        ${tweet[i].childreContent}
-    </div>
-</div> 
-            </div>
-            
-                    
-                  
-            `);
-        }
-    }
-    c = b.join("");
-    document.getElementById("tweetContent").innerHTML = c;
+    renderTweet(tweet);
     countLetter();
 }
 
@@ -235,69 +212,7 @@ function dienGet() {
     tweet[indexReTweet].content = d;
     console.log(tweet[indexReTweet].childreContent);
     console.log(tweet[indexReTweet].content);
-    let b = [];
-    for (let i = 0; i < tweet.length; i++) {
-        if (tweet[i].childreContent == "") {
-            b.push(` 
-            <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
-                <div class="col-1 ">
-                    <img src="team-placeholder.png" class="dien-imgUser"
-                    style="width:40px;height:40px;">
-                </div>
-                <div class="col-11">
-                    <div style="width:100%;height:100%;">
-                        <span><b>Dien</b></span>
-                        <span style="color: #e6ecf0">@Dien a few seconds ago</span>
-                        <div class="dien-ContentTweet">${tweet[i].content}</div>  
-                    </div>
-                </div>
-                <div class="dien-containerImage">
-                <img src="https://cdn.discordapp.com/attachments/733234774646325309/733578515944833035/comment_icon.png" class="dien-imgTweet" />
-                <div><i class="fas fa-retweet" style="cursor:pointer" onclick="retweet(${i})"data-toggle="modal" data-target="#myModal"></i></div>
-                <div onclick="like(${i})"><i class="far fa-heart"></i>
-                </div>
-                <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${i})" ></i></div>
-                
-                </div>
-            </div>
-            `);
-        } else {
-            b.push(` 
-            <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
-                <div class="col-1 ">
-                    <img src="team-placeholder.png" class="dien-imgUser"
-                    style="width:40px;height:40px;">
-                </div>
-                <div class="col-11">
-                    <div style="width:100%;height:100%;">
-                        <span><b>Dien</b></span>
-                        <span style="color: #e6ecf0">@Dien a few seconds ago</span>
-                        <div class="dien-ContentTweet">${tweet[i].content}</div>  
-                    </div>
-                </div>
-                <div class="dien-containerImage">
-                <img src="https://cdn.discordapp.com/attachments/733234774646325309/733578515944833035/comment_icon.png" class="dien-imgTweet" />
-                <div><i class="fas fa-retweet" style="cursor:pointer" onclick="retweet(${i})"data-toggle="modal" data-target="#myModal"></i></div>
-                <div onclick="like(${i})"><i class="fas fa-heart"></i>
-                </div>
-                <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${i})" ></i></div>
-                
-                </div>
-                <div class="row">
-    
-    <div class="col-12" style="border:1px solid #e6ecf0;height:100px;width:400px;text-align:center;margin-left:100px;border-radius:40px; word-wrap: break-word;">
-        ${tweet[i].childreContent}
-    </div>
-</div> 
-            </div>
-            
-                    
-                  
-            `);
-        }
-    }
-    c = b.join("");
-    document.getElementById("tweetContent").innerHTML = c;
+    renderTweet(tweet);
 
 }
 let indexReTweet;
