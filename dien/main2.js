@@ -112,9 +112,9 @@ function renderTweet(tweet) {
     }
     b.push(`<hr />
     <!-- lam follow news  -->
-    <div id="contentArea ">
+    <div id="contentArea "style="  border:1px solid #e6ecf0;">
 
-        <div class="row mx-auto t-row-style" style="  border:1px solid #e6ecf0;">
+        <div class="row mx-auto t-row-style" >
             <div class="col-1  ">
                 <img src="/t-img/cnn logo.jpg" alt="avatar" style="width:45px;">
             </div>
@@ -251,7 +251,7 @@ function renderTweet(tweet) {
         </div>
     </div>
     <hr />
-    <div class="row mx-auto t-row-style">
+    <div class="row mx-auto t-row-style" style="  border:1px solid #e6ecf0;">
 
         <div class="col-1">
             <i style="font-size: 40px;" class="fas fa-user-circle"></i>
@@ -474,9 +474,9 @@ function like(index) {
     }
     b.push(`<hr />
     <!-- lam follow news  -->
-    <div id="contentArea ">
+    <div id="contentArea "style="  border:1px solid #e6ecf0;">
 
-        <div class="row mx-auto t-row-style" style="  border:1px solid #e6ecf0;">
+        <div class="row mx-auto t-row-style" >
             <div class="col-1  ">
                 <img src="/t-img/cnn logo.jpg" alt="avatar" style="width:45px;">
             </div>
@@ -613,7 +613,7 @@ function like(index) {
         </div>
     </div>
     <hr />
-    <div class="row mx-auto t-row-style">
+    <div class="row mx-auto t-row-style" style="  border:1px solid #e6ecf0;">
 
         <div class="col-1">
             <i style="font-size: 40px;" class="fas fa-user-circle"></i>
