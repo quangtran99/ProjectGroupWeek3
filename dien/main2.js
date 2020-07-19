@@ -3,6 +3,7 @@ let MAX_CHAR = 140;
 let tweetContents = document.getElementById("tweetArea");
 let tweet = [];
 let count = 0;
+let hs=[];
 let remain = 140;
 const countLetter = () => {
     let numOfText = tweetContents.value.length;
@@ -79,7 +80,7 @@ function renderTweet(tweet) {
                 <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${i})" ></i></div>
                 
                 </div>
-                <div class="row dien-row1"style="  border:1px solid #e6ecf0; width:450px;border-radius:40px;text-align:left;margin-left:140px;">
+                <div class="row dien-row1"style="  border:1px solid #e6ecf0; width:520px;border-radius:40px;text-align:left;margin-left:33px;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
                     style="width:40px;height:40px;">
@@ -109,8 +110,9 @@ function renderTweet(tweet) {
         }
     }
     c = b.join("");
+    console.log(hs);
     document.getElementById("tweetContent").innerHTML = c;
-    }
+}
 
 
 function like(index) {
@@ -120,8 +122,8 @@ function like(index) {
     let b = [];
     for (let i = 0; i < tweet.length; i++) {
         if (tweet[i].islike == false) {
-            if (tweet[i].childreContent==""){
-            b.push(` 
+            if (tweet[i].childreContent == "") {
+                b.push(` 
             <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
@@ -143,8 +145,10 @@ function like(index) {
                 
                 </div>
             </div>
-            `);}
-            else{b.push(` 
+            `);
+            }
+            else {
+                b.push(` 
             <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
@@ -165,7 +169,7 @@ function like(index) {
                 <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${i})" ></i></div>
                 
                 </div>
-                <div class="row dien-row1"style="  border:1px solid #e6ecf0; width:450px;border-radius:40px;text-align:left;margin-left:140px;word-wrap:break-word;">
+                <div class="row dien-row1"style="  border:1px solid #e6ecf0; width:520px;border-radius:40px;text-align:left;margin-left:33px;word-wrap:break-word;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
                     style="width:40px;height:40px;">
@@ -186,10 +190,12 @@ function like(index) {
                 
                 </div>
             </div>
-            `);}
+            </div>
+            `);
+            }
         } else {
-            if(tweet[i].childreContent==""){
-            b.push(` 
+            if (tweet[i].childreContent == "") {
+                b.push(` 
             <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
@@ -212,8 +218,8 @@ function like(index) {
                 </div>
             </div>
             `);
-        }else{
-            b.push(` 
+            } else {
+                b.push(` 
             <div class="row dien-row1"style="  border:1px solid #e6ecf0;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
@@ -234,7 +240,7 @@ function like(index) {
                 <div><i class="far fa-trash-alt " style="cursor:pointer" onclick="remove(${i})" ></i></div>
                 
                 </div>
-                <div class="row dien-row1"style="  border:1px solid #e6ecf0; width:450px;border-radius:40px;text-align:left;margin-left:140px;word-wrap:break-word;">
+                <div class="row dien-row1"style="  border:1px solid #e6ecf0; width:520px;border-radius:40px;text-align:left;margin-left:33px;word-wrap:break-word;">
                 <div class="col-1 ">
                     <img src="team-placeholder.png" class="dien-imgUser"
                     style="width:40px;height:40px;">
@@ -255,9 +261,10 @@ function like(index) {
                 
                 </div>
             </div>
+            </div>
             `);
+            }
         }
-    }
     }
     c = b.join("");
     document.getElementById("tweetContent").innerHTML = c;
@@ -274,6 +281,7 @@ function hashtag(id) {
         } else if (d[i] === " ") {
             if (h !== "") {
                 ans.push(h);
+                hs.push(h);
                 h = "";
             }
         } else if (h !== "") { h += d[i] }
@@ -286,7 +294,7 @@ function hashtag(id) {
         d = sub1 + `<a href="#">${ans[i]}</a> ` + sub2;
     }
     return d;
-    
+
 }
 function dien_tweet() {
     count++;
