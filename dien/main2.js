@@ -114,7 +114,7 @@ function renderTweet(tweet) {
     <!-- lam follow news  -->
     <div id="contentArea ">
 
-        <div class="row mx-auto t-row-style">
+        <div class="row mx-auto t-row-style" style="  border:1px solid #e6ecf0;">
             <div class="col-1  ">
                 <img src="/t-img/cnn logo.jpg" alt="avatar" style="width:45px;">
             </div>
@@ -476,7 +476,7 @@ function like(index) {
     <!-- lam follow news  -->
     <div id="contentArea ">
 
-        <div class="row mx-auto t-row-style">
+        <div class="row mx-auto t-row-style" style="  border:1px solid #e6ecf0;">
             <div class="col-1  ">
                 <img src="/t-img/cnn logo.jpg" alt="avatar" style="width:45px;">
             </div>
