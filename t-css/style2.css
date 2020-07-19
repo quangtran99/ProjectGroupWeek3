@@ -18,11 +18,11 @@ body {
 }
 
 .t-left {
-    max-width: 300px;
+    max-width: 200px;
     /* display:flex;
     justify-content: center;
     flex-direction: column; */
-    padding-left: 40px;
+    
     margin:0;
 }
 

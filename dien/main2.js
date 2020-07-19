@@ -5,6 +5,7 @@ let tweet = [];
 let count = 0;
 let hs=[];
 let remain = 140;
+
 const countLetter = () => {
     let numOfText = tweetContents.value.length;
     remain = MAX_CHAR - numOfText;
