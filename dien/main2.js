@@ -110,6 +110,7 @@ function renderTweet(tweet) {
             `);
         }
     }
+    
     b.push(`<hr />
     <!-- lam follow news  -->
     <div id="contentArea "style="  border:1px solid #e6ecf0;">
@@ -728,17 +729,27 @@ function remove(index) {
 function dien_tweet1() {
     if (remain >= 0) { dien_tweet(); }
 }
+let indexReTweet;
+function retweet(index) {
+    indexReTweet = index;
+}
 function dienGet() {
     let a = hashtag("dien-retweetArea");
     let d = a;
     tweet[indexReTweet].islike = false;
     tweet[indexReTweet].childreContent = tweet[indexReTweet].content;
     tweet[indexReTweet].content = d;
+    let conTent=tweet[indexReTweet].content;
+    let children=tweet[indexReTweet].childreContent;
+    tweet.push({ content: conTent, islike: false, parent, id: count, childreContent:children});
+    
+    console.log("content",tweet[indexReTweet].content,".",tweet[indexReTweet].childreContent)
+    tweet[indexReTweet].content=tweet[indexReTweet].childreContent;
+    tweet[indexReTweet].childreContent="";
+    console.log("content",tweet[indexReTweet].content,".",tweet[indexReTweet].childreContent)
+
     renderTweet(tweet);
 
 }
-let indexReTweet;
-function retweet(index) {
-    indexReTweet = index;
-}
-renderTweet(``);
+
+renderTweet(``,"");
